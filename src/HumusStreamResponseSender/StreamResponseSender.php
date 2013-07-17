@@ -27,6 +27,7 @@ use Zend\Http\Request;
 use Zend\Http\Response\Stream;
 use Zend\Mvc\ResponseSender\SimpleStreamResponseSender;
 use Zend\Mvc\ResponseSender\SendResponseEvent;
+use HumusStreamResponseSender\Options;
 
 /**
  * @category   Humus
@@ -69,6 +70,7 @@ class StreamResponseSender extends SimpleStreamResponseSender
      * Set options
      *
      * @param array|Traversable|Options $options
+     * @return $this
      */
     public function setOptions($options)
     {
