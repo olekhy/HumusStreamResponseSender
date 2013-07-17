@@ -16,32 +16,15 @@
  * and is licensed under the MIT license.
  */
 
-namespace HumusStreamResponseSender;
-
-use Zend\Stdlib\AbstractOptions;
+namespace HumusStreamResponseSender\Options;
 
 /**
  * @category   Humus
  * @package    HumusStreamResponseSender
  * @license    MIT
  */
-class Options extends AbstractOptions
+interface OptionsInterface
 {
-    /**
-     * @var bool
-     */
-    protected $enableRangeSupport = false;
-
-    /**
-     * @var bool
-     */
-    protected $enableSpeedLimit = false;
-
-    /**
-     * @var int
-     */
-    protected $chunkSize = 262144; //in bytes (this will also be your download speed limit in bytes per second)
-
     /**
      * Set chunk size in  bytes
      *
@@ -49,10 +32,7 @@ class Options extends AbstractOptions
      *
      * @param int $chunkSize
      */
-    public function setChunkSize($chunkSize)
-    {
-        $this->chunkSize = (int) $chunkSize;
-    }
+    public function setChunkSize($chunkSize);
 
     /**
      * Get chunk size in bytes
@@ -61,48 +41,33 @@ class Options extends AbstractOptions
      *
      * @return int
      */
-    public function getChunkSize()
-    {
-        return $this->chunkSize;
-    }
+    public function getChunkSize();
 
     /**
      * Set enable range support
      *
      * @param bool $enableRangeSupport
      */
-    public function setEnableRangeSupport($enableRangeSupport)
-    {
-        $this->enableRangeSupport = (bool) $enableRangeSupport;
-    }
+    public function setEnableRangeSupport($enableRangeSupport);
 
     /**
      * Get enable range support
      *
      * @return bool
      */
-    public function getEnableRangeSupport()
-    {
-        return $this->enableRangeSupport;
-    }
+    public function getEnableRangeSupport();
 
     /**
      * Set enable speed limit
      *
      * @param bool $enableSpeedLimit
      */
-    public function setEnableSpeedLimit($enableSpeedLimit)
-    {
-        $this->enableSpeedLimit = (bool) $enableSpeedLimit;
-    }
+    public function setEnableSpeedLimit($enableSpeedLimit);
 
     /**
      * Get enable speed limit
      *
      * @return bool
      */
-    public function getEnableSpeedLimit()
-    {
-        return $this->enableSpeedLimit;
-    }
+    public function getEnableSpeedLimit();
 }
