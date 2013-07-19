@@ -5,6 +5,22 @@
  * Date: 7/17/13
  * Time: 5:10 PM
  */
+/*
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * This software consists of voluntary contributions made by many individuals
+ * and is licensed under the MIT license.
+ */
 namespace HumusStreamResponseSender\Options;
 
 interface NginxOptionsInterface
@@ -16,12 +32,12 @@ interface NginxOptionsInterface
      *
      * @return $this
      */
-    public function setNginxXsendFileInternalLocation($internalLocation);
+    public function setNginxXSendFileInternalLocation($internalLocation);
 
     /**
      * @return string
      */
-    public function getNginxXsendFileInternalLocation();
+    public function getNginxXSendFileInternalLocation();
 
     /**
      * opted nginx buffering for x-send-file response
@@ -30,14 +46,14 @@ interface NginxOptionsInterface
      *
      * @return string
      */
-    public function setNginxXsendBuffering($flag);
+    public function setNginxXSendBuffering($flag);
 
     /**
      * get buffering flag
      *
      * @return string
      */
-    public function getNginxXsendBuffering();
+    public function getNginxXSendBuffering();
 
     /**
      * set charset
@@ -46,14 +62,14 @@ interface NginxOptionsInterface
      *
      * @return string
      */
-    public function setNginxXsendCharset($charset);
+    public function setNginxXSendCharset($charset);
 
     /**
      * get charset
      *
      * @return string
      */
-    public function getNginxXsendCharset();
+    public function getNginxXSendCharset();
 
     /**
      * set internal cache expires interval in seconds
@@ -62,14 +78,14 @@ interface NginxOptionsInterface
      *
      * @return $this
      */
-    public function setNginxXsendInternalCacheExpires($expires);
+    public function setNginxXSendInternalCacheExpires($expires);
 
     /**
      * get internal cache expires interval in seconds
      *
      * @return mixed    int seconds or false for cache is off
      */
-    public function getNginxXsendInternalCacheExpires();
+    public function getNginxXSendInternalCacheExpires();
 
     /**
      * set number of bytes for rate limit
@@ -78,12 +94,12 @@ interface NginxOptionsInterface
      *
      * @return mixed
      */
-    public function setNginxXsendRateLimit($rateLimit);
+    public function setNginxXSendRateLimit($rateLimit);
 
     /**
      * get rate limit
      *
      * @return mixed  int bytes or false for rate limit is off
      */
-    public function getNginxXsendRateLimit();
+    public function getNginxXSendRateLimit();
 }
