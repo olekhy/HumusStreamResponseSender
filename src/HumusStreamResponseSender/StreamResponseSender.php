@@ -27,7 +27,7 @@ use Zend\Http\Request;
 use Zend\Http\Response\Stream;
 use Zend\Mvc\ResponseSender\SimpleStreamResponseSender;
 use Zend\Mvc\ResponseSender\SendResponseEvent;
-use HumusStreamResponseSender\Options;
+use HumusStreamResponseSender\Options\Options;
 
 /**
  * @category   Humus

@@ -26,8 +26,8 @@ use Zend\Stdlib\AbstractOptions;
  * @package    HumusStreamResponseSender
  * @license    MIT
  */
-class Options extends AbstractOptions implements
-    OptionsInterface,
+class Options extends AbstractOptions
+    implements OptionsInterface,
     NginxOptionsinterface,
     Apache2OptionsInterface
 {
@@ -150,7 +150,7 @@ class Options extends AbstractOptions implements
     /**
      * @inherited
      */
-    public function setNginxXsendFileInternalLocation($internalLocation)
+    public function setNginxXSendFileInternalLocation($internalLocation)
     {
         if (!is_string($internalLocation) || strlen($internalLocation) == 0 ) {
             throw new InvalidArgumentException(sprintf(
@@ -166,7 +166,7 @@ class Options extends AbstractOptions implements
     /**
      * @return string
      */
-    public function getNginxXsendFileInternalLocation()
+    public function getNginxXSendFileInternalLocation()
     {
         return $this->nginxXsendFileInternalLocation;
     }
@@ -174,7 +174,7 @@ class Options extends AbstractOptions implements
     /**
      * @inherited
      */
-    public function setNginxXsendBuffering($flag)
+    public function setNginxXSendBuffering($flag)
     {
         $this->nginxXsendBuffering = $flag;
         return $this;
@@ -183,7 +183,7 @@ class Options extends AbstractOptions implements
     /**
      * @inherited
      */
-    public function getNginxXsendBuffering()
+    public function getNginxXSendBuffering()
     {
         return $this->nginxXsendBuffering;
     }
@@ -191,7 +191,7 @@ class Options extends AbstractOptions implements
     /**
      * @inherited
      */
-    public function setNginxXsendCharset($charset)
+    public function setNginxXSendCharset($charset)
     {
         $this->nginxXsendCharset = $charset;
         return $this;
@@ -200,7 +200,7 @@ class Options extends AbstractOptions implements
     /**
      * @inherited
      */
-    public function getNginxXsendCharset()
+    public function getNginxXSendCharset()
     {
         return $this->nginxXsendCharset;
     }
@@ -208,7 +208,7 @@ class Options extends AbstractOptions implements
     /**
      * @inherited
      */
-    public function setNginxXsendInternalCacheExpires($expires)
+    public function setNginxXSendInternalCacheExpires($expires)
     {
         $this->nginxXsendInternalCacheExpires = $expires;
         return $this;
@@ -217,7 +217,7 @@ class Options extends AbstractOptions implements
     /**
      * @inherited
      */
-    public function getNginxXsendInternalCacheExpires()
+    public function getNginxXSendInternalCacheExpires()
     {
         return $this->nginxXsendInternalCacheExpires;
     }
@@ -226,7 +226,7 @@ class Options extends AbstractOptions implements
     /**
      * @inherited
      */
-    public function setNginxXsendRateLimit($rateLimit)
+    public function setNginxXSendRateLimit($rateLimit)
     {
         $this->nginxXsendRateLimit = $rateLimit;
         return $this;
@@ -235,7 +235,7 @@ class Options extends AbstractOptions implements
     /**
      * @inherited
      */
-    public function getNginxXsendRateLimit()
+    public function getNginxXSendRateLimit()
     {
         return $this->nginxXsendRateLimit;
     }
