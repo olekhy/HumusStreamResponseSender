@@ -152,9 +152,11 @@ class Options extends AbstractOptions
      */
     public function setNginxXSendFileInternalLocation($internalLocation)
     {
-        if (!is_string($internalLocation) || strlen($internalLocation) == 0 ) {
-            throw new InvalidArgumentException(sprintf(
-                'Invalid location string: "%s"', $internalLocation
+        if (!is_string($internalLocation) || strlen($internalLocation) == 0) {
+            throw new InvalidArgumentException(
+                sprintf(
+                    'Invalid location string: "%s"',
+                    $internalLocation
                 )
             );
         }

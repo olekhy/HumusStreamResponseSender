@@ -25,5 +25,4 @@ namespace HumusStreamResponseSender\Options;
 
 interface Apache2OptionsInterface
 {
-
 }
