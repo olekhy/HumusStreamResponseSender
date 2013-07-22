@@ -26,7 +26,10 @@ use Zend\Stdlib\AbstractOptions;
  * @package    HumusStreamResponseSender
  * @license    MIT
  */
-class Options extends AbstractOptions implements OptionsInterface, NginxOptionsinterface, Apache2OptionsInterface
+class Options extends AbstractOptions implements
+    OptionsInterface,
+    NginxOptionsInterface,
+    Apache2OptionsInterface
 {
     // <editor-fold desc="Stream Response Sender options">
 
