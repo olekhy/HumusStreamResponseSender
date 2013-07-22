@@ -147,8 +147,10 @@ class XSendFileStreamResponseSender extends SimpleStreamResponseSender
         if ($this->options instanceof NginxOptionsInterface) {
             return $this->getNginxHeaders($this->options, $filename);
         } else {
-            throw new RuntimeException(sprintf(
-                    'X-Sendfile not yet implemented for given type: %s', get_class($this->options)
+            throw new RuntimeException(
+                sprintf(
+                    'X-Sendfile not yet implemented for given type: %s',
+                    get_class($this->options)
                 )
             );
         }
