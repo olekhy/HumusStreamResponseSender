@@ -26,6 +26,7 @@ use Zend\Stdlib\AbstractOptions;
  * @package    HumusStreamResponseSender
  * @license    MIT
  */
+
 class Options extends AbstractOptions implements
     OptionsInterface,
     NginxOptionsInterface,
