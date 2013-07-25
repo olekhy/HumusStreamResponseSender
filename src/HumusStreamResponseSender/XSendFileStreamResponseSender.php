@@ -1,5 +1,12 @@
 <?php
-/*
+/**
+ * This file is part of Humus module response sender
+ *
+ * @author Oleksandr Khutoretskyy <olekhy@gmail.com>
+ * Date: 7/17/13
+ * Time: 1:34 PM
+ * @license MIT
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -15,7 +22,10 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
-
+/**
+ * Class XSendFileStreamResponseSender
+ * @package HumusStreamResponseSender
+ */
 namespace HumusStreamResponseSender;
 
 use HumusStreamResponseSender\Options\NginxOptionsInterface;
@@ -43,11 +53,6 @@ class XSendFileStreamResponseSender extends SimpleStreamResponseSender
      * @var Request
      */
     protected $request;
-
-    /**
-     * @var int
-     */
-    private $range;
 
     /**
      * @param array|Traversable|null|Options $options
@@ -198,7 +203,11 @@ class XSendFileStreamResponseSender extends SimpleStreamResponseSender
             $headers['X-Accel-Charset'] = $charset;
         }
 
-        $headers['X-Accel-Buffering'] = $options->getNginxXSendBuffering();
+        $buffering = $options->getNginxXSendBuffering();
+        if (false !== $buffering) {
+            $headers['X-Accel-Buffering'] = $buffering;
+        }
+
         $headers['X-Accel-Redirect'] = $location . '/' . $filename;
 
         return $headers;
