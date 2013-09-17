@@ -1,12 +1,5 @@
 <?php
 /**
- * This file is part of Humus module response sender
- *
- * @author Oleksandr Khutoretskyy <olekhy@gmail.com>
- * Date: 7/25/13
- * Time: 1:34 PM
- * @license MIT
- *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -22,10 +15,7 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
-/**
- * Interface NginxOptionsInterface
- * @package HumusStreamResponseSender\Options
- */
+
 namespace HumusStreamResponseSender\Options;
 
 interface NginxOptionsInterface

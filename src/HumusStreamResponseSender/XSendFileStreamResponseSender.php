@@ -1,12 +1,5 @@
 <?php
 /**
- * This file is part of Humus module response sender
- *
- * @author Oleksandr Khutoretskyy <olekhy@gmail.com>
- * Date: 7/17/13
- * Time: 1:34 PM
- * @license MIT
- *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -22,10 +15,7 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  */
-/**
- * Class XSendFileStreamResponseSender
- * @package HumusStreamResponseSender
- */
+
 namespace HumusStreamResponseSender;
 
 use HumusStreamResponseSender\Options\NginxOptionsInterface;
@@ -149,13 +139,15 @@ class XSendFileStreamResponseSender extends SimpleStreamResponseSender
      */
     public function getHeaders($filename)
     {
-        if ($this->options instanceof NginxOptionsInterface) {
+        $options = $this->getOptions();
+
+        if ($options instanceof NginxOptionsInterface) {
             return $this->getNginxHeaders($this->options, $filename);
         } else {
             throw new RuntimeException(
                 sprintf(
                     'X-Sendfile not yet implemented for given type: %s',
-                    get_class($this->options)
+                    get_class($options)
                 )
             );
         }
@@ -188,6 +180,11 @@ class XSendFileStreamResponseSender extends SimpleStreamResponseSender
     {
         $location = $options->getNginxXSendFileInternalLocation();
         $headers = array();
+
+        /*
+        todo: definitions of X-Sendfile specific headers in nginx documentation being unambiguous
+        todo: implementing of that will be made later
+
         $expires = $options->getNginxXSendInternalCacheExpires();
         if (false !== $expires) {
             $headers['X-Accel-Expires'] = $expires;
@@ -207,7 +204,7 @@ class XSendFileStreamResponseSender extends SimpleStreamResponseSender
         if (false !== $buffering) {
             $headers['X-Accel-Buffering'] = $buffering;
         }
-
+        */
         $headers['X-Accel-Redirect'] = $location . '/' . $filename;
 
         return $headers;
